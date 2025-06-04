@@ -1,0 +1,32 @@
+{
+  "name": "json-grid-garden",
+  "version": "1.0.0",
+  "description": "A lean web server with SASS-based landing page",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "sass": "sass --watch public/styles/main.scss:public/styles/main.css public/weeks/*/style.scss:public/weeks/*/style.css",
+    "sass:build": "sass public/styles/main.scss:public/styles/main.css public/weeks/*/style.scss:public/weeks/*/style.css --style compressed",
+    "dev:all": "concurrently \"npm run dev\" \"npm run sass\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSONRice/json-grid-garden.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JSONRice/json-grid-garden/issues"
+  },
+  "homepage": "https://github.com/JSONRice/json-grid-garden#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.2",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
