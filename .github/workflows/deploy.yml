@@ -22,7 +22,17 @@ jobs:
 
       - name: Build SASS
         run: |
+          # Make the build script executable
+          chmod +x ./scripts/build-sass.sh
+          
+          # Run the build script
           npm run sass:build
+          
+          # Verify the build
+          if [ ! -f "public/styles/main.css" ]; then
+            echo "Error: main.css was not generated"
+            exit 1
+          fi
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

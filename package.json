@@ -7,7 +7,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "sass": "sass --watch public/styles/main.scss:public/styles/main.css public/weeks/*/style.scss:public/weeks/*/style.css",
-    "sass:build": "sass public/styles/main.scss:public/styles/main.css public/weeks/*/style.scss:public/weeks/*/style.css --style compressed",
+    "sass:build": "./scripts/build-sass.sh",
     "dev:all": "concurrently \"npm run dev\" \"npm run sass\""
   },
   "repository": {
